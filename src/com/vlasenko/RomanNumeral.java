@@ -1,0 +1,27 @@
+package com.vlasenko;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public enum RomanNumeral {
+    I(1), II(2), III(3), IV(4),
+    V(5), VI(6), VII(7), VIII(8), IX(9), X(10);
+
+    private int value;
+
+    RomanNumeral(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public static List<RomanNumeral> getReverseSortedValues() {
+        return Arrays.stream(values())
+                .sorted(Comparator.comparing((RomanNumeral e) -> e.value).reversed())
+                .collect(Collectors.toList());
+    }
+}
