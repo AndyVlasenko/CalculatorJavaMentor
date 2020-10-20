@@ -56,7 +56,7 @@ public class CalculatorJavaMentor {
 
     private static boolean isInRange(int one, int two) {
 
-        return !(one < 0 || one > 9 || two < 0 || two > 9);
+        return !(one < 1 || one > 10 || two < 1 || two > 10);
     }
 
     private static int romanToArabic(String input) {
@@ -85,8 +85,8 @@ public class CalculatorJavaMentor {
     }
 
     private static String arabicToRoman(int number) {
-        if ((number <= 0) || (number > 81)) {
-            throw new IllegalArgumentException(number + " is not in range (0,81)");
+        if ((number < 1) || (number > 100)) {
+            throw new IllegalArgumentException(number + " is not in range (0,100)");
         }
 
         List<RomanNumeral> romanNumerals = RomanNumeral.getReverseSortedValues();
