@@ -85,8 +85,8 @@ public class CalculatorJavaMentor {
     }
 
     private static String arabicToRoman(int number) {
-        if ((number <= 0) || (number > 19)) {
-            throw new IllegalArgumentException(number + " is not in range (0,19]");
+        if ((number <= 0) || (number > 81)) {
+            throw new IllegalArgumentException(number + " is not in range (0,81)");
         }
 
         List<RomanNumeral> romanNumerals = RomanNumeral.getReverseSortedValues();
